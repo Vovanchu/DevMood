@@ -5,7 +5,7 @@ import App from "./App.tsx";
 import SideBar from "./components/Sidebar/Sidebar.tsx";
 
 createRoot(document.getElementById("root")!).render(
-  <BrowserRouter>
+  <BrowserRouter basename="/DevMood">
     <div className="layout">
       <main>
         <App />
