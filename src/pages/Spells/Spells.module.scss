@@ -1,0 +1,10 @@
+.spells {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  &__title {
+    font-size: 2em;
+    margin-bottom: 16px;
+  }
+}

@@ -1,0 +1,115 @@
+/* ----------------------------------
+   DESKTOP SIDEBAR (left)
+----------------------------------- */
+.sidebar {
+  width: 250px;
+  background-color: #f4f4f4;
+  padding: 15px;
+  height: 100vh;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.35s ease;
+  z-index: 1000;
+
+  /* DESKTOP: left sidebar by default */
+  transform: translateX(0);
+
+  /* MOBILE: right side slide-in */
+  @media (max-width: 768px) {
+    position: fixed;
+    top: 0;
+    right: 0; /* <-- ключове */
+    transform: translateX(100%); /* приховано праворуч */
+  }
+
+  &__open {
+    transform: translateX(0); /* виїжджає справа */
+  }
+
+  &__menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &__link {
+      display: block;
+      padding: 10px 15px;
+      color: #333;
+      text-decoration: none;
+      border-bottom: 1px solid #ddd;
+      transition: all 0.3s ease;
+      border-radius: 2px;
+
+      &:hover {
+        background-color: #550000;
+        color: #fff;
+        scale: 1.05;
+        text-decoration: underline;
+      }
+
+      &__active {
+        display: block;
+        padding: 10px 15px;
+        background-color: #550000;
+        color: #fff;
+        border-radius: 2px;
+        scale: 1.05;
+      }
+    }
+  }
+}
+
+/* ----------------------------------
+   BURGER BUTTON (top-left)
+----------------------------------- */
+.sidebar__burger {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px; /* бургер лишився зліва */
+  width: 32px;
+  height: 26px;
+  z-index: 1100;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+
+  span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    margin-bottom: 6px;
+    background: #333;
+    border-radius: 2px;
+    transition: all 0.35s ease;
+  }
+
+  &__active {
+    span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+    span:nth-child(2) {
+      opacity: 0;
+    }
+    span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+  }
+}
+
+/* ----------------------------------
+   BACKDROP
+----------------------------------- */
+.sidebar__backdrop {
+  @media (max-width: 768px) {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(2px);
+    z-index: 900;
+  }
+}

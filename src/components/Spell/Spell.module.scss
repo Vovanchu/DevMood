@@ -1,0 +1,48 @@
+.spell {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  &__loading {
+    font-size: 1.2em;
+    color: #888;
+    margin-top: 20px;
+  }
+}
+
+.spellCard {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+  background-color: #f9f9f9;
+
+  transition: all 0.3s ease;
+
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    font-size: 1.5em;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+
+  &__description {
+    font-size: 1em;
+    color: #555;
+    flex-wrap: wrap;
+  }
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    scale: 1.02;
+  }
+}
