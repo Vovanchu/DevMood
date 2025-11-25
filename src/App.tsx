@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<h1>Charaterers Page</h1>} />
+        <Route path="/" element={<Charaterers />} />
         <Route path="/chatacters" element={<Charaterers />} />
         <Route path="/chatacters/:id" element={<CharatererDetails />} />
         <Route path="/spells" element={<Spells />} />
